@@ -1,4 +1,4 @@
 # Vitejs + Tauri Demo
 
-- [Vitejs]()
-- [Tauri]()
+- [Vitejs](https://vitejs.dev/)
+- [Tauri](https://tauri.studio/en/)

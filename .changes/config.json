@@ -1,0 +1,38 @@
+{
+  "gitSiteUrl": "https://github.com/mintterteam/vitejs-tauri-demo/",
+  "pkgManagers": {
+    "javascript": {
+      "version": true,
+      "getPublishedVersion": "npm view ${ pkg.pkg } version",
+      "publish": [
+        {
+          "command": "npm publish --access public",
+          "dryRunCommand": "echo publish here"
+        }
+      ]
+    },
+    "rust": {
+      "version": true,
+      "getPublishedVersion": "cargo search ${ pkg.pkg } --limit 1 | sed -nE 's/^[^\"]*\"//; s/\".*//1p' -",
+      "publish": [
+        {
+          "command": "cargo publish --no-verify",
+          "dryRunCommand": "cargo publish --no-verify --dry-run --allow-dirty"
+        }
+      ]
+    }
+  },
+  "packages": {
+    "@demo/app": {
+      "version": true,
+      "path": "./packages/app",
+      "publish": [{
+        "command": "echo publish here",
+        "dryRunCommand": "echo publish here"
+      }],
+      "dependencies": [
+        "@demo/client", 
+      ]
+    }
+  }
+}

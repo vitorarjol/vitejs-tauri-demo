@@ -1,0 +1,19 @@
+{
+  "name": "vitejs-tauri-demo",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "app": "yarn workspace @demo/app"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@effection/node": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "covector": "^0.7.1"
+  }
+}
